@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import Series from './Series'
 import NewSeries from './NewSeries'
+import EditSeries from './EditSeries'
 
 // functional stateless component
 const About = () => <section className="intro-section"><h1>Sobre</h1></section>
@@ -17,7 +18,7 @@ class App extends Component {
             <div className="container">
               <div className="navbar-header page-scroll">
                 <a className="navbar-brand page-scroll" href="#page-top">
-                    <img src="images/logo.png" alt="Logo" height="30" />
+                    <img src="/images/logo.png" alt="Logo" height="30" />
                 </a>
               </div>
 
@@ -38,6 +39,7 @@ class App extends Component {
             </div>
           </nav>
           <Route exact path='/' component={Home} />
+          <Route exact path='/series-edit/:id' component={EditSeries} />
           <Route exact path='/series/:genre' component={Series} />
           <Route exact path='/about' component={About} />
           <Route exact path='/new' component={NewSeries} />
